@@ -18,5 +18,20 @@ vim.api.nvim_set_keymap("n", "<leader>ss", ":%s/", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>rw", ":%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gh", "<cmd>OpenGithubRepo<cr>", { noremap = true })
 
+-- Custom navigation
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-f>", "<C-f>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-b>", "<C-b>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-k>", "10k", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-Up>", "10k", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-j>", "10j", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-Down>", "10j", { noremap = true })
+
+vim.api.nvim_set_keymap("n", "<C-s>", ":w!<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-q>", ":q<cr>", { noremap = true })
+
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
