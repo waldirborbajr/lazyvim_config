@@ -35,3 +35,10 @@ vim.api.nvim_set_keymap("n", "<C-q>", ":q<cr>", { noremap = true })
 
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
+
+vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true })
+vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true })
+vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
+vim.api.nvim_set_keymap("v", "<S-Down>", ":m '>+1<CR>gv=gv", { noremap = true })
+vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
+vim.api.nvim_set_keymap("v", "<S-Up>", ":m '<-2<CR>gv=gv", { noremap = true })
