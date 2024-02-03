@@ -93,3 +93,10 @@ vim.opt.splitright = true
 -- Set leader key to space
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+vim.diagnostic.config({
+  virtual_text = false,
+  float = {
+    border = "rounded",
+  },
+})
