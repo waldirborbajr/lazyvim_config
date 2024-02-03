@@ -12,6 +12,31 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lit_" .. name, { clear = true })
 end
 
+--[[Autosave functionality for Markdown files]]
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.conceallevel = 2
+    ---@diagnostic disable-next-line: inject-field
+    vim.b.autosave = true
+  end,
+})
+
+local function autosave()
+  if vim.b.autosave then
+    if vim.b.autoformat then
+      ---@diagnostic disable-next-line: inject-field
+      vim.b.autoformat = false -- Obviously if autosave is on, autoformat should be off
+    end
+    vim.cmd("silent! write")
+  end
+end
+
+autocmd({ "TextChanged", "InsertLeave" }, {
+  pattern = "*.md",
+  callback = autosave,
+})
+
 -- Disable continuation comment on next line
 autocmd("User", {
   desc = "no auto comment after pressing o",
