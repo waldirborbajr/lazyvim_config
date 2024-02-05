@@ -118,15 +118,15 @@ autocmd("BufWritePost", {
 })
 
 -- Nvimtree open file on creation
-local function open_file_created()
-  require("nvim-tree.api").events.subscribe("FileCreated", function(file)
-    vim.cmd("edit " .. file.fname)
-  end)
-end
-
-autocmd({ "VimEnter" }, {
-  callback = open_file_created,
-})
+-- local function open_file_created()
+--   require("nvim-tree.api").events.subscribe("FileCreated", function(file)
+--     vim.cmd("edit " .. file.fname)
+--   end)
+-- end
+--
+-- autocmd({ "VimEnter" }, {
+--   callback = open_file_created,
+-- })
 
 -- prevent comment from being inserted when entering new line in existing comment
 autocmd("BufEnter", {
