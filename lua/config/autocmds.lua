@@ -8,10 +8,6 @@ local cmd = vim.api.nvim_command
 -- local settings = require("custom.chadrc").settings
 local fn = vim.fn
 
-local function augroup(name)
-  return vim.api.nvim_create_augroup("lit_" .. name, { clear = true })
-end
-
 --[[Autosave functionality for Markdown files]]
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
@@ -42,53 +38,6 @@ autocmd("User", {
   desc = "no auto comment after pressing o",
   pattern = "*",
   command = "setlocal formatoptions-=cro",
-})
-
--- Remember cursor position when reopening files go to last loc when opening a buffer
-autocmd("BufReadPost", {
-  group = augroup("last_loc"),
-  callback = function(event)
-    local exclude = { "gitcommit" }
-    local buf = event.buf
-    if vim.tbl_contains(exclude, vim.bo[buf].filetype) or vim.b[buf].lazyvim_last_loc then
-      return
-    end
-    vim.b[buf].lazyvim_last_loc = true
-    local mark = vim.api.nvim_buf_get_mark(buf, '"')
-    local lcount = vim.api.nvim_buf_line_count(buf)
-    if mark[1] > 0 and mark[1] <= lcount then
-      pcall(vim.api.nvim_win_set_cursor, 0, mark)
-    end
-  end,
-})
-
--- highlight on yank
-local highlight_group = augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = "*",
-})
-
--- Autoreload on buffer change
--- https://stackoverflow.com/questions/62100785/auto-reload-file-and-in-neovim-and-auto-reload-nerbtree
-vim.o.autoread = true
-autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
-  command = "if mode() != 'c' | checktime | endif",
-  pattern = { "*" },
-})
-
-autocmd({ "BufRead" }, {
-  desc = "Display a message when the current file is not in utf-8 format",
-  pattern = "*",
-  group = augroup("non_utf8_file", { clear = true }),
-  callback = function()
-    if vim.bo.fileencoding ~= "utf-8" then
-      vim.notify("File not in UTF-8 format!", vim.log.levels.WARN, { title = "nvim-config" })
-    end
-  end,
 })
 
 autocmd("FileType", {
