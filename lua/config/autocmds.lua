@@ -4,7 +4,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 local create_cmd = vim.api.nvim_create_user_command
 local cmd = vim.api.nvim_command
-local augroup = vim.api.nvim_create_augroup
+-- local augroup = vim.api.nvim_create_augroup
 -- local settings = require("custom.chadrc").settings
 local fn = vim.fn
 
@@ -119,9 +119,7 @@ autocmd("BufWritePost", {
 
 -- Nvimtree open file on creation
 -- local function open_file_created()
---   require("nvim-tree.api").events.subscribe("FileCreated", function(file)
---     vim.cmd("edit " .. file.fname)
---   end)
+--   require("nvim-tree.api").events.subscribe("FileCreated", function(file) vim.cmd("edit " .. file.fname) end)
 -- end
 --
 -- autocmd({ "VimEnter" }, {
