@@ -1,31 +1,17 @@
 return {
   {
     "epwalsh/obsidian.nvim",
-    -- the obsidian vault in this default config  ~/obsidian-vault
-    -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
-    -- event = { "bufreadpre " .. vim.fn.expand "~" .. "/my-vault/**.md" },
-    event = { "BufReadPre  */2ndBrain/*.md" },
-    keys = {
-      {
-        "gf",
-        function()
-          if require("obsidian").util.cursor_on_markdown_link() then
-            return "<cmd>ObsidianFollowLink<CR>"
-          else
-            return "gf"
-          end
-        end,
-        noremap = false,
-        expr = true,
-      },
-    },
+    version = "*", -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = "markdown",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
       "nvim-telescope/telescope.nvim",
+      "nvim-treesitter/nvim-treesitter",
     },
     opts = {
-      dir = "~/home/borba/wks/2ndBrain", -- specify the vault location. no need to call 'vim.fn.expand' here
+      dir = "~/wks/2ndBrain", -- specify the vault location. no need to call 'vim.fn.expand' here
       use_advanced_uri = true,
       finder = "telescope.nvim",
       templates = {
@@ -33,6 +19,19 @@ return {
         date_format = "%Y-%m-%d-%a",
         time_format = "%H:%M",
       },
+      note_id_func = function(title)
+        local suffix = ""
+        if title ~= nil then
+          -- If title is given, transform it into valid file name.
+          suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+        else
+          -- If title is nil, just add 4 random uppercase letters to the suffix.
+          for _ = 1, 4 do
+            suffix = tostring(os.time()) .. "-" .. string.char(math.random(65, 90))
+          end
+        end
+        return suffix
+      end,
       note_frontmatter_func = function(note)
         -- This is equivalent to the default frontmatter function.
         local out = { id = note.id, aliases = note.aliases, tags = note.tags }
@@ -48,6 +47,7 @@ return {
       -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
       -- URL it will be ignored but you can customize this behavior here.
       follow_url_func = vim.ui.open,
+      disable_frontmatter = true,
     },
   },
 }
