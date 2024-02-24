@@ -6,4 +6,5 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 ```
 https://github.com/planetsLightningArrester/run-commands
+https://github.com/joshuamorony/lazyvim
 ```
