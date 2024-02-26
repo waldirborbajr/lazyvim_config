@@ -6,18 +6,6 @@ local Util = require("lazyvim.util")
 
 local map = require("lazyvim.util").safe_keymap_set
 
--- disable
-local function disable(mode, key)
-  vim.api.nvim_set_keymap(mode, key, "<Nop>", { noremap = true, silent = true })
-end
-
--- disable("n", "<leader>l") -- open Lazy
-disable("n", "<leader>cm") -- open Mason
--- disable("n", "<leader>cl") -- LspInfo
--- disable("n", "<leader>L") -- LazyVim changelog
--- disable("i", "<C-w>") -- delete backwards in insert mode, redefined below
--- disable("i", "<C-j>") -- move down in insert mode, redefined below
-
 --[[ General Mappings ]]
 map("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move up" })
@@ -66,13 +54,6 @@ map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { desc = "" })
 -- map("v", "K", ":m '<-2<CR>gv=gv",{ desc = "" })
 map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { desc = "" })
 
--- obsidian
-map("n", "<leader>oo", "<cmd>ObsidianBacklinks<cr>", { desc = "Obsidian Backlinks" })
-map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "Obsidian New Note" })
-map("n", "<leader>ot", "<cmd>ObsidianToday<cr>", { desc = "Obsidian Today" })
-map("n", "<leader>oy", "<cmd>ObsidianYesterday<cr>", { desc = "Obsidian Yesterday" })
-map("n", "<leader>or", "<cmd>ObsidianTomorrow<cr>", { desc = "Obsidian Tomorrow" })
-
 -- markdown
 map(
   "n",
@@ -86,26 +67,6 @@ map(
   '<cmd>setlocal formatoptions+=a<cr><cmd>setlocal textwidth=80<cr><cmd>echo "Auto-wrapping enabled"<cr>',
   { desc = "Enable auto wrap" }
 )
-
--- buffers
-map("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-map("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-
--- diagnostic
-local diagnostic_goto = function(next, severity)
-  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-  severity = severity and vim.diagnostic.severity[severity] or nil
-  return function()
-    go({ severity = severity })
-  end
-end
-map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
-map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
-map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
-map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
-map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
-map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
-map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 -- floating terminal
 map("n", "<leader>ft", function()
