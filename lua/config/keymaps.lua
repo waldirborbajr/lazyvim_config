@@ -96,3 +96,7 @@ map("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode" })
 
 -- Delete to void register
 map({ "n", "v" }, "<leader>D", [["_d]])
+
+-- and these are for searching
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
