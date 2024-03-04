@@ -9,10 +9,11 @@ return {
     end,
     keys = {
       {
-        "<leader>sm",
+        "<leader>fm",
         function()
           require("telescope.builtin").marks({ hidden = true })
         end,
+        desc = "Telescope marks",
       },
     },
   },
