@@ -75,3 +75,6 @@ map("n", "<leader>fT", function()
   Util.terminal.open()
 end, { desc = "Terminal (cwd)" })
 map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+
+-- surrounding words
+map("n", "<leader>wsq", 'ciw""<Esc>P', { desc = "Word Surround Quotes" })
