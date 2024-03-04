@@ -69,10 +69,10 @@ map(
 
 -- floating terminal
 map("n", "<leader>ft", function()
-  Util.terminal.open(nil, { cwd = Util.root.get() })
+  Util.terminal.open(nil, { cwd = Util.root.get(), border = "rounded", size = { width = 0.7, height = 0.7 } })
 end, { desc = "Terminal (root dir)" })
 map("n", "<leader>fT", function()
-  Util.terminal.open()
+  Util.terminal.open(nil, { border = "rounded", size = { width = 0.7, height = 0.7 } })
 end, { desc = "Terminal (cwd)" })
 map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
