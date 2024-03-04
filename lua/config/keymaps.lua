@@ -29,10 +29,16 @@ map("n", "<C-d>", "<C-d>zz", { desc = "" })
 map("n", "<C-u>", "<C-u>zz", { desc = "" })
 map("n", "<C-f>", "<C-f>zz", { desc = "" })
 map("n", "<C-b>", "<C-b>zz", { desc = "" })
-map("n", "<C-k>", "10k", { desc = "" })
+-- map("n", "<C-k>", "10k", { desc = "" })
+-- map("n", "<C-j>", "10j", { desc = "" })
 map("n", "<C-Up>", "10k", { desc = "" })
-map("n", "<C-j>", "10j", { desc = "" })
 map("n", "<C-Down>", "10j", { desc = "" })
+
+-- Quickfix navigation
+map("n", "<C-k>", "<cmd>cnext<CR>zz")
+map("n", "<C-j>", "<cmd>cprev<CR>zz")
+map("n", "<leader>k", "<cmd>lnext<CR>zz")
+map("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Alternative way to save and exit in Normal mode.
 -- NOTE: Adding `redraw` helps with `cmdheight=0` if buffer is not modified
@@ -78,3 +84,15 @@ map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
 -- surrounding words
 map("n", "<leader>wsq", 'ciw""<Esc>P', { desc = "Word Surround Quotes" })
+
+-- Oil
+map("n", "<leader>e", "<cmd>lua require('oil').toggle_float()<CR>", { desc = "Oil" })
+
+-- Twilight
+map("n", "<leader>tt", "<cmd>Twilight<CR>", { desc = "Toggle Twilight" })
+
+-- Zen mode
+map("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode" })
+
+-- Delete to void register
+map({ "n", "v" }, "<leader>D", [["_d]])
