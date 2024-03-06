@@ -2,7 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-local Util = require("lazyvim.util")
+-- local Util = require("lazyvim.util")
 
 -- Silently move Lines
 -- Already exists into Lazyvim default config
@@ -16,6 +16,15 @@ local Util = require("lazyvim.util")
 -- better indenting
 -- vim.keymap.set("v", "<", "<gv", { desc = "Indent right" })
 -- vim.keymap.set("v", ">", ">gv", { desc = "Indent left" })
+--
+-- floating terminal
+-- vim.keymap.set("n", "<leader>ft", function()
+--   Util.terminal.open(nil, { cwd = Util.root.get(), border = "rounded", size = { width = 0.7, height = 0.7 } })
+-- end, { desc = "Terminal (root dir)" })
+-- vim.keymap.set("n", "<leader>fT", function()
+--   Util.terminal.open(nil, { border = "rounded", size = { width = 0.7, height = 0.7 } })
+-- end, { desc = "Terminal (cwd)" })
+-- vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
 -- Escape in insert mode
 vim.keymap.set("i", "jj", "<esc>")
@@ -78,26 +87,8 @@ vim.keymap.set(
   { desc = "Enable auto wrap" }
 )
 
--- floating terminal
-vim.keymap.set("n", "<leader>ft", function()
-  Util.terminal.open(nil, { cwd = Util.root.get(), border = "rounded", size = { width = 0.7, height = 0.7 } })
-end, { desc = "Terminal (root dir)" })
-vim.keymap.set("n", "<leader>fT", function()
-  Util.terminal.open(nil, { border = "rounded", size = { width = 0.7, height = 0.7 } })
-end, { desc = "Terminal (cwd)" })
-vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
-
 -- surrounding words
 vim.keymap.set("n", "<leader>wsq", 'ciw""<Esc>P', { desc = "Word Surround Quotes" })
-
--- Oil
--- vim.keymap.set("n", "<leader>e", "<cmd>lua require('oil').toggle_float()<CR>", { desc = "Oil" })
-
--- Twilight
-vim.keymap.set("n", "<leader>tt", "<cmd>Twilight<CR>", { desc = "Toggle Twilight" })
-
--- Zen mode
-vim.keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode" })
 
 -- Delete to void register
 vim.keymap.set({ "n", "v" }, "<leader>D", [["_d]])

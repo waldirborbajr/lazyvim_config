@@ -1,5 +1,12 @@
 return {
   "folke/twilight.nvim",
+  keys = {
+    {
+      "<leader>tt",
+      "<cmd>Twilight<CR>",
+      { desc = "Toggle Twilight" },
+    },
+  },
   event = "VeryLazy",
   opts = {
     dimming = {
