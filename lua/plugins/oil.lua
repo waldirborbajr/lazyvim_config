@@ -1,5 +1,12 @@
 return {
   "stevearc/oil.nvim",
+  keys = {
+    {
+      "<leader>e",
+      "<cmd>lua require('oil').toggle_float()<CR>",
+      desc = "Oil",
+    },
+  },
   opts = {
     -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
     -- Set to false if you still want to use netrw.

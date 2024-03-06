@@ -4,75 +4,74 @@
 
 local Util = require("lazyvim.util")
 
-local map = require("lazyvim.util").safe_keymap_set
-
 -- Silently move Lines
-map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
-map("v", "<A-j>", "<cmd>m '>+1<cr>gv=gv", { desc = "Move down" })
-map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
-map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
-map("v", "<A-k>", "<cmd>m '<-2<cr>gv=gv", { desc = "Move up" })
-map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+-- Already exists into Lazyvim default config
+-- vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+-- vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+-- vim.keymap.set("v", "<A-j>", "<cmd>m '>+1<cr>gv=gv", { desc = "Move down" })
+-- vim.keymap.set("v", "<A-k>", "<cmd>m '<-2<cr>gv=gv", { desc = "Move up" })
+-- vim.keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+-- vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+--
+-- better indenting
+-- vim.keymap.set("v", "<", "<gv", { desc = "Indent right" })
+-- vim.keymap.set("v", ">", ">gv", { desc = "Indent left" })
 
 -- Escape in insert mode
-map("i", "jj", "<esc>")
-map("i", "jk", "<esc>")
+vim.keymap.set("i", "jj", "<esc>")
+vim.keymap.set("i", "jk", "<esc>")
 
 -- files
-map("n", "!!", ":qa!<enter>", { desc = "" })
-map("n", "QQ", ":q!<enter>", { desc = "" })
-map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
-map("n", "WW", ":w!<enter>", { desc = "" })
-map("n", "E", "$", { desc = "" })
-map("n", "B", "^", { desc = "" })
-map("n", "td", ":TodoTelescope<CR>", { desc = "" })
-map("n", "<leader>ss", ":%s/", { desc = "" })
-map("n", "<leader>rw", ":%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "" })
-map("n", "gh", "<cmd>OpenGithubRepo<cr>", { desc = "" })
+vim.keymap.set("n", "!!", ":qa!<enter>", { desc = "" })
+vim.keymap.set("n", "QQ", ":q!<enter>", { desc = "" })
+vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
+vim.keymap.set("n", "WW", ":w!<enter>", { desc = "" })
+vim.keymap.set("n", "E", "$", { desc = "" })
+vim.keymap.set("n", "B", "^", { desc = "" })
+vim.keymap.set("n", "td", ":TodoTelescope<CR>", { desc = "" })
+vim.keymap.set("n", "<leader>ss", ":%s/", { desc = "" })
+vim.keymap.set("n", "<leader>rw", ":%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "" })
+vim.keymap.set("n", "gh", "<cmd>OpenGithubRepo<cr>", { desc = "" })
 
 -- Custom navigation
-map("n", "<C-d>", "<C-d>zz", { desc = "" })
-map("n", "<C-u>", "<C-u>zz", { desc = "" })
-map("n", "<C-f>", "<C-f>zz", { desc = "" })
-map("n", "<C-b>", "<C-b>zz", { desc = "" })
--- map("n", "<C-k>", "10k", { desc = "" })
--- map("n", "<C-j>", "10j", { desc = "" })
-map("n", "<C-Up>", "10k", { desc = "" })
-map("n", "<C-Down>", "10j", { desc = "" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "" })
+vim.keymap.set("n", "<C-f>", "<C-f>zz", { desc = "" })
+vim.keymap.set("n", "<C-b>", "<C-b>zz", { desc = "" })
+-- vim.keymap.set("n", "<C-k>", "10k", { desc = "" })
+-- vim.keymap.set("n", "<C-j>", "10j", { desc = "" })
+vim.keymap.set("n", "<C-Up>", "10k", { desc = "" })
+vim.keymap.set("n", "<C-Down>", "10j", { desc = "" })
 
 -- Quickfix navigation
-map("n", "<C-k>", "<cmd>cnext<CR>zz")
-map("n", "<C-j>", "<cmd>cprev<CR>zz")
-map("n", "<leader>k", "<cmd>lnext<CR>zz")
-map("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Alternative way to save and exit in Normal mode.
 -- NOTE: Adding `redraw` helps with `cmdheight=0` if buffer is not modified
-map("n", "<C-s>", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
-map({ "i", "x" }, "<C-s>", "<Esc><Cmd>silent! update | redraw<CR>", { desc = "Save and go to Normal mode" })
+vim.keymap.set("n", "<C-s>", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
+vim.keymap.set({ "i", "x" }, "<C-s>", "<Esc><Cmd>silent! update | redraw<CR>", { desc = "Save and go to Normal mode" })
 
-map("n", "<C-q>", ":q<cr>", { desc = "" })
-
--- better indenting
-map("v", "<", "<gv", { desc = "Indent right" })
-map("v", ">", ">gv", { desc = "Indent left" })
+vim.keymap.set("n", "<C-q>", ":q<cr>", { desc = "" })
 
 -- new file
-map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
+vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
--- map("v", "J", ":m '>+1<CR>gv=gv",{ desc = "" })
-map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { desc = "" })
--- map("v", "K", ":m '<-2<CR>gv=gv",{ desc = "" })
-map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { desc = "" })
+-- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv",{ desc = "" })
+vim.keymap.set("v", "<S-Down>", ":m '>+1<CR>gv=gv", { desc = "" })
+-- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv",{ desc = "" })
+vim.keymap.set("v", "<S-Up>", ":m '<-2<CR>gv=gv", { desc = "" })
 
 -- markdown
-map(
+vim.keymap.set(
   "n",
   "<leader>da",
   '<cmd>setlocal formatoptions-=a<cr><cmd>setlocal textwidth=0<cr><cmd>echo "Auto-wrapping disabled"<cr>',
   { desc = "Disable auto wrap" }
 )
-map(
+vim.keymap.set(
   "n",
   "<leader>ea",
   '<cmd>setlocal formatoptions+=a<cr><cmd>setlocal textwidth=80<cr><cmd>echo "Auto-wrapping enabled"<cr>',
@@ -80,29 +79,29 @@ map(
 )
 
 -- floating terminal
-map("n", "<leader>ft", function()
+vim.keymap.set("n", "<leader>ft", function()
   Util.terminal.open(nil, { cwd = Util.root.get(), border = "rounded", size = { width = 0.7, height = 0.7 } })
 end, { desc = "Terminal (root dir)" })
-map("n", "<leader>fT", function()
+vim.keymap.set("n", "<leader>fT", function()
   Util.terminal.open(nil, { border = "rounded", size = { width = 0.7, height = 0.7 } })
 end, { desc = "Terminal (cwd)" })
-map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
 -- surrounding words
-map("n", "<leader>wsq", 'ciw""<Esc>P', { desc = "Word Surround Quotes" })
+vim.keymap.set("n", "<leader>wsq", 'ciw""<Esc>P', { desc = "Word Surround Quotes" })
 
 -- Oil
-map("n", "<leader>e", "<cmd>lua require('oil').toggle_float()<CR>", { desc = "Oil" })
+-- vim.keymap.set("n", "<leader>e", "<cmd>lua require('oil').toggle_float()<CR>", { desc = "Oil" })
 
 -- Twilight
-map("n", "<leader>tt", "<cmd>Twilight<CR>", { desc = "Toggle Twilight" })
+vim.keymap.set("n", "<leader>tt", "<cmd>Twilight<CR>", { desc = "Toggle Twilight" })
 
 -- Zen mode
-map("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode" })
+vim.keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode" })
 
 -- Delete to void register
-map({ "n", "v" }, "<leader>D", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>D", [["_d]])
 
 -- and these are for searching
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
