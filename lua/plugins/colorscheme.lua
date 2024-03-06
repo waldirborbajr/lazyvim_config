@@ -3,7 +3,7 @@ return {
     "catppuccin",
     opts = {
       -- https://www.reddit.com/r/neovim/comments/18eobbj/transparency_catppuccin_with_lazyvim_not_working/
-      flavour = "mocha", -- Flavour must be one of: latte, frappe, macchiato, mocha
+      flavour = "macchiato", -- Flavour must be one of: latte, frappe, macchiato, mocha
     },
   },
 
