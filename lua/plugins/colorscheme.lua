@@ -1,11 +1,11 @@
 return {
-  --   {
-  --     "catppuccin",
-  --     opts = {
-  --       -- https://www.reddit.com/r/neovim/comments/18eobbj/transparency_catppuccin_with_lazyvim_not_working/
-  --       flavour = "frappe",
-  --     },
-  --   },
+  {
+    "catppuccin",
+    opts = {
+      -- https://www.reddit.com/r/neovim/comments/18eobbj/transparency_catppuccin_with_lazyvim_not_working/
+      flavour = "mocha", -- Flavour must be one of: latte, frappe, macchiato, mocha
+    },
+  },
 
   -- add gruvbox
   { "wittyjudge/gruvbox-material.nvim" },
@@ -14,7 +14,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox-material",
+      colorscheme = "catppuccin",
     },
   },
 }
