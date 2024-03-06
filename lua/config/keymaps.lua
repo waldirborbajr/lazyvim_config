@@ -47,20 +47,20 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "" })
 vim.keymap.set("n", "<C-f>", "<C-f>zz", { desc = "" })
 vim.keymap.set("n", "<C-b>", "<C-b>zz", { desc = "" })
--- vim.keymap.set("n", "<C-k>", "10k", { desc = "" })
--- vim.keymap.set("n", "<C-j>", "10j", { desc = "" })
-vim.keymap.set("n", "<C-Up>", "10k", { desc = "" })
-vim.keymap.set("n", "<C-Down>", "10j", { desc = "" })
+vim.keymap.set("n", "<C-k>", "10k", { desc = "" })
+vim.keymap.set("n", "<C-j>", "10j", { desc = "" })
+-- vim.keymap.set("n", "<C-Up>", "10k", { desc = "" })
+-- vim.keymap.set("n", "<C-Down>", "10j", { desc = "" })
 
 -- Quickfix navigation
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+-- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Alternative way to save and exit in Normal mode.
 -- NOTE: Adding `redraw` helps with `cmdheight=0` if buffer is not modified
-vim.keymap.set("n", "<C-s>", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
+vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
 vim.keymap.set({ "i", "x" }, "<C-s>", "<Esc><Cmd>silent! update | redraw<CR>", { desc = "Save and go to Normal mode" })
 
 vim.keymap.set("n", "<C-q>", ":q<cr>", { desc = "" })
