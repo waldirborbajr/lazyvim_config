@@ -2,13 +2,13 @@ return {
   {
     "stevearc/conform.nvim",
     opts = {
-      format_on_save = {
-        -- These options will be passed to conform.format()
-        timeout_ms = 3000,
-        async = false, -- not recommended to change
-        quiet = false, -- not recommended to change
-        lsp_fallback = true,
-      },
+      -- format_on_save = {
+      --   -- These options will be passed to conform.format()
+      --   timeout_ms = 3000,
+      --   async = false, -- not recommended to change
+      --   quiet = false, -- not recommended to change
+      --   lsp_fallback = true,
+      -- },
       formatters_by_ft = {
         lua = { "stylua" },
         go = { "gofmt", "gofumpt", "goimports", "golines" },
