@@ -27,15 +27,15 @@ return {
       evaluate_single = true,
       header = logo,
       items = {
-        new_section("Find file",           "Telescope find_files", "Telescope"),
-        new_section("Recent files",        "Telescope oldfiles",   "Telescope"),
-        new_section("Grep text",           "Telescope live_grep",  "Telescope"),
-        new_section("init.lua",            "e $MYVIMRC",           "Config"),
-        new_section("Lazy",                "Lazy",                 "Config"),
-        new_section("-Explorer",           "ex .",                 "Oil"),
-        new_section("New file",            "ene | startinsert",    "Built-in"),
-        new_section("Quit",                "qa",                   "Built-in"),
-        new_section("Session restore",     [[lua require("persistence").load()]], "Session"),
+        new_section("Find file          (f)", "Telescope find_files", "Telescope"),
+        new_section("Recent files       (r)", "Telescope oldfiles", "Telescope"),
+        new_section("Grep text          (g)", "Telescope live_grep", "Telescope"),
+        new_section("Config             (c)", "lua require('lazyvim.util').telescope.config_files()()", "Config"),
+        new_section("Extras             (e)", "LazyExtras", "Config"),
+        new_section("Lazy              󰒲 (l)", "Lazy", "Config"),
+        new_section("New file           (n)", "ene | startinsert", "Built-in"),
+        new_section("Quit               (q)", "qa", "Built-in"),
+        new_section("Session restore    (s)", [[lua require("persistence").load()]], "Session"),
       },
       content_hooks = {
         starter.gen_hook.adding_bullet(pad .. "░ ", false),
@@ -64,7 +64,7 @@ return {
       callback = function()
         local stats = require("lazy").stats()
         local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-        local pad_footer = string.rep(" ", 8)
+        local pad_footer = string.rep(" ", 15)
         starter.config.footer = pad_footer .. "⚡ Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
         pcall(starter.refresh)
       end,
