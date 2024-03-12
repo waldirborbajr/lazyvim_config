@@ -4,7 +4,7 @@ return {
     {
       "<leader>e",
       "<cmd>lua require('oil').toggle_float()<CR>",
-      desc = "Oil",
+      desc = "Open oil.nvim",
     },
   },
   opts = {
@@ -38,7 +38,7 @@ return {
     -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
     delete_to_trash = false,
     -- Skip the confirmation popup for simple operations
-    skip_confirm_for_simple_edits = true,
+    skip_confirm_for_simple_edits = false,
     -- Change this to customize the command used when deleting to trash
     trash_command = "trash-put",
     -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
@@ -98,7 +98,7 @@ return {
       max_height = 18,
       border = "rounded",
       win_options = {
-        winblend = 0,
+        winblend = 10,
       },
       -- This is the config that will be passed to nvim_open_win.
       -- Change values here to customize the layout
