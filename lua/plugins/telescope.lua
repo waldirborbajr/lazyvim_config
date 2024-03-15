@@ -1,6 +1,16 @@
 return {
   {
     "nvim-telescope/telescope-symbols.nvim",
+    dependencies = {
+      {
+        "nvim-telescope/telescope-live-grep-args.nvim",
+        -- This will not install any breaking changes.
+        -- For major updates, this must be adjusted manually.
+        version = "^1.0.0",
+      },
+      { "nvim-telescope/telescope-fzy-native.nvim" },
+      { "natecraddock/telescope-zf-native.nvim" },
+    },
     keys = {
       {
         "<leader>fs",
@@ -18,12 +28,12 @@ return {
     config = function(_, opts)
       local telescope = require("telescope")
       telescope.setup(opts)
-      telescope.load_extension("import")
+      -- telescope.load_extension("import")
       telescope.load_extension("live_grep_args")
-      telescope.load_extension("package_info")
-      telescope.load_extension("smart_goto")
-      telescope.load_extension("smart_open")
-      telescope.load_extension("undo")
+      -- telescope.load_extension("package_info")
+      -- telescope.load_extension("smart_goto")
+      -- telescope.load_extension("smart_open")
+      -- telescope.load_extension("undo")
       telescope.load_extension("zf-native")
     end,
 

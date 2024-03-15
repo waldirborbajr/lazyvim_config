@@ -26,6 +26,9 @@
 -- end, { desc = "Terminal (cwd)" })
 -- vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
+vim.keymap.set("n", "<Tab>", "<cmd>bn<cr>")
+vim.keymap.set("n", "<S-Tab>", "<cmd>bp<cr>")
+
 -- Escape in insert mode
 vim.keymap.set("i", "jj", "<esc>")
 vim.keymap.set("i", "jk", "<esc>")
@@ -94,5 +97,26 @@ vim.keymap.set("n", "<leader>wsq", 'ciw""<Esc>P', { desc = "Word Surround Quotes
 vim.keymap.set({ "n", "v" }, "<leader>D", [["_d]])
 
 -- and these are for searching
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- vim.keymap.set("n", "n", "nzzzv")
+-- vim.keymap.set("n", "N", "Nzzzv")
+
+vim.keymap.set("n", "*", "*zz")
+
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+
+-- folds
+vim.keymap.set("n", "<leader>z", "<cmd>normal! zMzv<cr>", { desc = "Fold all others" })
+
+vim.keymap.set("v", "<C-s>", "<cmd>sort<CR>") -- Sort highlighted text in visual mode with Control+S
+vim.keymap.set("v", "<leader>rr", '"hy:%s/<C-r>h//g<left><left>') -- Replace all instances of highlighted words
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Move current line down
+vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv") -- Move current line up
+
+-- buffer
+vim.keymap.set(
+  "n",
+  "<leader>bb",
+  "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
+  { desc = "Telescope buffers" }
+)
