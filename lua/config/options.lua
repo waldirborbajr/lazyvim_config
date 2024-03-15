@@ -14,3 +14,8 @@ vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undo"
 vim.opt.undofile = true
+
+vim.o.cursorlineopt = "number"
+vim.g.code_action_menu_show_details = false
+vim.g.code_action_menu_show_diff = true
+vim.g.code_action_menu_show_action_kind = false

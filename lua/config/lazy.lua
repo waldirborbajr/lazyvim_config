@@ -7,14 +7,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
-vim.cmd([[command! -nargs=0 GoToCommand :Telescope commands]])
-vim.cmd([[command! -nargs=0 GoToFile :Telescope smart_open]])
-vim.cmd([[command! -nargs=0 Grep :Telescope live_grep]])
-vim.cmd([[command! -nargs=0 SmartGoTo :Telescope smart_goto]])
-vim.o.cursorlineopt = "number"
-vim.g.code_action_menu_show_details = false
-vim.g.code_action_menu_show_diff = true
-vim.g.code_action_menu_show_action_kind = false
 
 require("lazy").setup({
   ui = {
