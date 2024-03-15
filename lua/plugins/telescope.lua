@@ -22,6 +22,11 @@ return {
         "<cmd>Telescope live_grep<cr>",
         desc = "Telescope Live Grep",
       },
+      {
+        "<leader>*",
+        "<cmd>Telescope grep_string<cr>",
+        { silent = true, desc = "Grep Word Under Cursor" },
+      },
     },
 
     -- apply the config and additionally load fzf-native
