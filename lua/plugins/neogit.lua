@@ -1,6 +1,13 @@
 return {
   {
     "NeogitOrg/neogit",
+    keys = {
+      {
+        "<leader>ng",
+        "<cmd>Neogit kind=floating<cr>",
+        desc = "Neogit floating panel",
+      },
+    },
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
