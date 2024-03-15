@@ -14,15 +14,26 @@ return {
       })
     end,
   },
+
   -- lazyvim.plugins.editor
   {
     "which-key.nvim",
-    opts = { window = { border = BORDER_STYLE } },
+    opts = {
+      window = {
+        border = BORDER_STYLE,
+      },
+    },
   },
+
   {
     "gitsigns.nvim",
-    opts = { preview_config = { border = BORDER_STYLE } },
+    opts = {
+      preview_config = {
+        border = BORDER_STYLE,
+      },
+    },
   },
+
   -- lazyvim.plugins.lsp
   {
     "nvim-lspconfig",
@@ -32,16 +43,31 @@ return {
       return opts
     end,
   },
+
   -- {
   --   "null-ls.nvim",
   --   opts = { border = BORDER_STYLE },
   -- },
+
   {
     "mason.nvim",
     opts = {
-      ui = { border = BORDER_STYLE },
+      ui = {
+        border = BORDER_STYLE,
+      },
     },
   },
+
+  --  not working from here
+  -- {
+  --   "lazy.nvim",
+  --   opts = {
+  --     ui = {
+  --       border = BORDER_STYLE,
+  --     },
+  --   },
+  -- },
+
   -- lazyvim.plugins.ui
   -- {
   --   "noice.nvim",
