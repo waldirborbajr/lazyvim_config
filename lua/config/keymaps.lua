@@ -41,7 +41,7 @@ vim.keymap.set("n", "WW", ":w!<enter>", { desc = "" })
 vim.keymap.set("n", "E", "$", { desc = "" })
 vim.keymap.set("n", "B", "^", { desc = "" })
 vim.keymap.set("n", "td", ":TodoTelescope<CR>", { desc = "" })
-vim.keymap.set("n", "<leader>ss", ":%s/", { desc = "" })
+vim.keymap.set("n", "<leader>rs", ":%s/", { desc = "" })
 vim.keymap.set("n", "<leader>rw", ":%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "" })
 vim.keymap.set("n", "gh", "<cmd>OpenGithubRepo<cr>", { desc = "" })
 
