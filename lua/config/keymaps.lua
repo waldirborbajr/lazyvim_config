@@ -50,8 +50,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "" })
 vim.keymap.set("n", "<C-f>", "<C-f>zz", { desc = "" })
 vim.keymap.set("n", "<C-b>", "<C-b>zz", { desc = "" })
-vim.keymap.set("n", "<C-k>", "10k", { desc = "" })
-vim.keymap.set("n", "<C-j>", "10j", { desc = "" })
+-- vim.keymap.set("n", "<C-k>", "10k", { desc = "" })
+-- vim.keymap.set("n", "<C-j>", "10j", { desc = "" })
 -- vim.keymap.set("n", "<C-Up>", "10k", { desc = "" })
 -- vim.keymap.set("n", "<C-Down>", "10j", { desc = "" })
 
@@ -120,3 +120,9 @@ vim.keymap.set(
   "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
   { desc = "Telescope buffers" }
 )
+
+-- Navigation vim panes better & tmux
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
