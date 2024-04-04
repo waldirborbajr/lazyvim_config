@@ -2,7 +2,7 @@ return {
   -- disable alpha
   { "goolord/alpha-nvim", enabled = false },
   { "nvimdev/dashboard-nvim", enabled = false },
-  { "echasnovski/mini.pairs", enabled = false },
+  { "echasnovski/mini.pairs", enabled = true },
   { "folke/noice.nvim", enabled = false },
   { "mini.surround", enabled = false },
   { "flash.nvim", enabled = false },
