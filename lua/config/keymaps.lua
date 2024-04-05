@@ -26,6 +26,7 @@
 -- end, { desc = "Terminal (cwd)" })
 -- vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
+-- Tabs
 vim.keymap.set("n", "<Tab>", "<cmd>bn<cr>")
 vim.keymap.set("n", "<S-Tab>", "<cmd>bp<cr>")
 
