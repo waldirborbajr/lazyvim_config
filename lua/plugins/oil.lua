@@ -15,7 +15,7 @@ return {
     -- See :help oil-columns
     columns = {
       "icon",
-      --"permissions",
+      -- "permissions",
       "size",
       -- "mtime",
     },
