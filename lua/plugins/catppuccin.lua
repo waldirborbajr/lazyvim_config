@@ -7,7 +7,7 @@ return {
     -- TODO: generate dynamics colors
     local theme_colors = require("config.colors")
     return {
-      flavour = "macchiato",
+      flavour = "mocha",
       transparent_background = true,
       color_overrides = { all = theme_colors },
       custom_highlights = function(colors)
