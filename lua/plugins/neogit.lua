@@ -1,6 +1,7 @@
 return {
   {
     "NeogitOrg/neogit",
+    enabled = false,
     keys = {
       {
         "<leader>ng",
