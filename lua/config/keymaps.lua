@@ -164,10 +164,6 @@ vim.keymap.set("n", "<leader>oz", ':Telescope live_grep search_dirs={"/home/borb
 --
 -- for review workflow
 -- move file in current buffer to zettelkasten folder
-vim.keymap.set(
-  "n",
-  "<leader>ok",
-  ":!mv '%:p' /Users/alex/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/ZazenCodes/zettelkasten<cr>:bd<cr>"
-)
+vim.keymap.set("n", "<leader>ok", ":!mv '%:p' /home/borba/wks/2ndBrain/borba<cr>:bd<cr>")
 -- delete file in current buffer
 vim.keymap.set("n", "<leader>odd", ":!rm '%:p'<cr>:bd<cr>")
