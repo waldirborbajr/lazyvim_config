@@ -1,5 +1,6 @@
 return {
   "Lilja/zellij.nvim",
+  enabled = false,
   -- If you want to configure the plugin
   config = function()
     require("zellij").setup({
