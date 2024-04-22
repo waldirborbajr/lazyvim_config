@@ -6,6 +6,7 @@ return {
     require("zellij").setup({
       path = "$HOME/.cargo/bin/zellij", -- Zellij binary path
       vimTmuxNavigatorKeybinds = true, -- Will set keybinds like <C-h> to left
+      replaceVimWindowNavigationKeybinds = false,
     })
   end,
 }
