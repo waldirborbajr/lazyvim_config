@@ -9,19 +9,15 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
-  ui = {
-    border = "rounded",
-  },
-
   spec = {
     -- add LazyVim and import its plugins
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       options = {
-        -- colorscheme = "catppuccin-frappe",
+        colorscheme = "catppuccin-frappe",
         defaults = {
-          keymaps = false,
+          keymaps = true,
         },
       },
     },
@@ -37,7 +33,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.coding.codeium" },
-
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
@@ -53,7 +48,8 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "catppuccin", "tokyonight", "habamax" } },
+  install = { colorscheme = { "catppuccin" } },
+  ui = { border = "rounded" },
   checker = { enabled = false, notify = false }, -- automatically check for plugin updates
   performance = {
     rtp = {
@@ -67,28 +63,6 @@ require("lazy").setup({
         "tohtml",
         "tutor",
         "zipPlugin",
-
-        -- "2html_plugin",
-        -- "getscript",
-        -- "getscriptPlugin",
-        -- "gzip",
-        -- "logipat",
-        -- "matchit",
-        -- "matchparen",
-        -- "netrw",
-        -- "netrwFileHandlers",
-        -- "netrwPlugin",
-        -- "netrwSettings",
-        -- "rrhelper",
-        -- "spellfile_plugin",
-        -- "tar",
-        -- "tarPlugin",
-        -- "tohtml",
-        -- "tutor",
-        -- "vimball",
-        -- "vimballPlugin",
-        -- "zip",
-        -- "zipPlugin",
       },
     },
   },
