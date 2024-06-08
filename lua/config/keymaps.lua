@@ -44,7 +44,7 @@ vim.keymap.set("n", "B", "^", { desc = "" })
 vim.keymap.set("n", "td", ":TodoTelescope<CR>", { desc = "" })
 vim.keymap.set("n", "<leader>rs", ":%s/", { desc = "" })
 vim.keymap.set("n", "<leader>rw", ":%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "" })
-vim.keymap.set("n", "gh", "<cmd>OpenGithubRepo<cr>", { desc = "" })
+vim.keymap.set("n", "<leader>gH", "<cmd>OpenGithubRepo<cr>", { desc = "Open GitHub Repo" })
 
 -- Custom navigation
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "" })
