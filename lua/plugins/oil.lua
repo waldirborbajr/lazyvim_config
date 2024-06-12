@@ -2,8 +2,8 @@ return {
   "stevearc/oil.nvim",
   keys = {
     {
-      "<leader>e",
-      "<cmd>lua require('oil').toggle_float()<CR>",
+      "-",
+      "<CMD>Oil --float<CR>",
       desc = "Open oil.nvim",
     },
   },
